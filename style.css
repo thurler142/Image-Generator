@@ -1,0 +1,42 @@
+@font-face {
+    font-family: MinhaFonte;
+    src: url('./Roboto/Roboto-BoldItalic.ttf') format('truetype'), /* TrueType */
+         url('./Roboto/Roboto-BoldItalic.woff') format('woff'); /* WOFF (Web Open Font Format) */
+}
+body {
+    background-image: url('./img/background.jpg');
+    background-size: cover; /* Para ajustar a imagem ao tamanho da tela */
+    background-repeat: no-repeat; /* Para evitar a repetição da imagem */
+    background-attachment: fixed; /* Para manter a imagem fixa enquanto a página rola */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+#titulo{
+    margin-bottom: 3rem;
+    font-family: MinhaFonte, sans-serif;
+    text-shadow: 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(31, 34, 185, 0.5);
+    filter: brightness(5);
+}
+#resultado {
+    margin: 3rem;
+}
+#img {
+    max-width: 1300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.container{
+    text-align: center;
+    margin-top: 100px;
+
+@media (max-width: 1000px) {
+    #botaoPesquisar{
+        margin-top: 15px;
+    }
+    }
+}
