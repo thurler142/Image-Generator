@@ -9,6 +9,6 @@ botaoPesquisar.addEventListener("click", () => {
     if (largura.length === 0 || altura.length === 0 || pesquisa.length === 0) {
         alert('Preencha os campos corretamente');
     } else {
-        resultado.innerHTML = `<img id="img" src="https://source.unsplash.com/${largura}x${altura}/?${pesquisa}">`;
+        resultado.innerHTML = `<img id="img" src="https://api.unsplash.com/${largura}x${altura}/?${pesquisa}">`;
     }
 });
