@@ -17,7 +17,7 @@ botaoPesquisar.addEventListener("click", () => {
             resultado.appendChild(img);
         };
         img.onerror = function() {
-            resultado.innerHTML = '<p>Erro ao carregar a imagem. Tente outra pesquisa.</p>';
+            resultado.innerHTML = alert('Erro ao carregar imagem');
         };
         img.src = `https://source.unsplash.com/${largura}x${altura}/?${encodeURIComponent(pesquisa)}`;
     }
