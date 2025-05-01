@@ -1,6 +1,3 @@
-const botaoPesquisar = document.querySelector("#botaoPesquisar");
-const resultado = document.querySelector("#resultado");
-
 botaoPesquisar.addEventListener("click", () => { 
     const pesquisa = document.querySelector("#pesquisa").value;
     const altura = document.querySelector("#altura").value;
@@ -9,6 +6,19 @@ botaoPesquisar.addEventListener("click", () => {
     if (largura.length === 0 || altura.length === 0 || pesquisa.length === 0) {
         alert('Preencha os campos corretamente');
     } else {
-        resultado.innerHTML = `<img id="img" src="https://api.unsplash.com/${largura}x${altura}/?${pesquisa}">`;
+        // Mostrar indicador de carregamento
+        resultado.innerHTML = '<p>Carregando imagem...</p>';
+        
+        // Criar elemento de imagem com tratamento de erro
+        const img = new Image();
+        img.id = "img";
+        img.onload = function() {
+            resultado.innerHTML = '';
+            resultado.appendChild(img);
+        };
+        img.onerror = function() {
+            resultado.innerHTML = '<p>Erro ao carregar a imagem. Tente outra pesquisa.</p>';
+        };
+        img.src = `https://source.unsplash.com/${largura}x${altura}/?${encodeURIComponent(pesquisa)}`;
     }
 });
